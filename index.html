@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para o amor da minha vida 💙</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gradient-to-br from-blue-600 to-purple-700 text-white min-h-screen flex flex-col">
+  <video autoplay muted loop id="video-bg">
+    <source src="video.mp4" type="video/mp4" />
+    Seu navegador não suporta vídeo em HTML5.
+  </video>
+
+  <header class="text-center py-6">
+    <h1 class="text-4xl font-bold">Para o amor da minha vida 💙</h1>
+    <p class="text-lg text-white-200 mt-2">Cada momento ao seu lado é inesquecível</p>
+  </header>
+
+  <main class="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+    <div class="card-foto">
+      <img src="fotos/IMG_7772.JPG" alt="IMG_7772.JPG" class="w-full h-64 object-cover" />
+    </div>
+    <div class="card-foto">
+      <img src="fotos/IMG_8703.PNG" alt="IMG_8703.PNG" class="w-full h-64 object-cover" />
+    </div>
+    <div class="card-foto">
+      <img src="fotos/IMG_8816.JPG" alt="IMG_8816.JPG" class="w-full h-64 object-cover" />
+    </div>
+    <div class="card-foto">
+      <img src="fotos/IMG_8883.JPG" alt="IMG_8883.JPG" class="w-full h-64 object-cover" />
+    </div>
+    <div class="card-foto">
+      <img src="fotos/IMG_8981.JPG" alt="IMG_8981.JPG" class="w-full h-64 object-cover" />
+    </div>
+    <div class="card-foto">
+      <img src="fotos/IMG_6342.HEIC" alt="IMG_6342.HEIC" class="w-full h-64 object-cover" />
+    </div>
+    <div class="card-foto">
+      <img src="fotos/IMG_6362.HEIC" alt="IMG_6362.HEIC" class="w-full h-64 object-cover" />
+    </div>
+    <div class="card-foto">
+      <img src="fotos/IMG_7772.JPG" alt="IMG_7772.JPG" class="w-full h-64 object-cover" />
+    </div>
+  </main>
+
+  <div class="flex flex-col items-center mt-10">
+    <button id="surpriseBtn" class="bg-gradient-to-r from-pink-500 to-purple-500 hover:scale-105 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300">
+      Clique para uma surpresa 💖
+    </button>
+
+    <div class="mt-6 animate-bounce text-5xl">💖</div>
+    <p class="text-white mt-2 italic">Você me faz feliz de um jeito que ninguém mais faz 💌</p>
+
+    <div id="message" class="mt-8 hidden text-center text-xl max-w-md bg-white text-purple-800 p-6 rounded-xl shadow-lg">
+      Você é a melhor parte da minha vida, e sem você tudo perde o brilho. Feliz aniversário, meu amor!
+    </div>
+  </div>
+
+  <script>
+    const btn = document.getElementById("surpriseBtn");
+    const msg = document.getElementById("message");
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.textContent = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.bottom = "0";
+      heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+
+    function startHearts() {
+      setInterval(createHeart, 400);
+    }
+
+    btn.addEventListener("click", () => {
+      msg.classList.remove("hidden");
+      startHearts();
+    });
+  </script>
+</body>
+</html>
